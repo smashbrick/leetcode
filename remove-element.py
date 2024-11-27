@@ -1,11 +1,31 @@
+##Python
+
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
-        k = 0  # This will count the number of valid elements
+        k = 0  # This will track the index for valid elements
 
-        for i, num in enumerate(nums):
-            if num != val:
-                nums[k] = num  # Move valid element to the front
-                k += 1  # Increment count of valid elements
-        
-        print(nums[:k])  # This will show only valid elements
-        return k
+        for i in range(len(nums)):  # Iterate over the entire list
+            if nums[i] != val:  # If the current element is not equal to val
+                nums[k] = nums[i]  # Move valid element to the k-th position
+                k += 1  # Increment the count of valid elements
+
+        return k  # Return the count of valid elements
+
+
+## JavasScript
+# /**
+#  * @param {number[]} nums
+#  * @param {number} val
+#  * @return {number}
+#  */
+# var removeElement = function(nums, val) {
+#     let k = 0;
+
+#     for (let i = 0; i < nums.length; i++){
+#         if (nums[i] != val){
+#             nums[k] = nums[i]
+#             k+=1
+#         }
+#     }
+#     return k
+# };
